@@ -1,6 +1,6 @@
 <div align="center">
 
-# Oiii! Я ToxicStyle-DevXplorer 🤞
+# Я ToxicStyle-DevXplorer 🤞
 
 <img src="https://media1.tenor.com/m/Z61KjL7N-5oAAAAd/gojo-hollow-purple.gif" width="400" style="border-radius: 10px;" />
 
