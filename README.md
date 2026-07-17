@@ -1,16 +1,21 @@
-## Hi there 👋
+<div align="center">
 
-<!--
-**ToxicStyle-DevXplorer/ToxicStyle-DevXplorer** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# 🌐 TERMINAL // TOXICSTYLE-DEVXPLORER 
+### ⚡ "Throughout Heaven and Earth, I Alone Am The Honored One." ⚡
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<!-- НЕОНОВЫЙ БАННЕР С ГОДЖО И КИБЕРПАНКОМ -->
+<img src="https://capsule-render.vercel.app/image?type=cyberpunk&color=00f0ff&height=220&section=header&text=LIMITLESS%20VOID&fontSize=65&fontAlignY=45&animation=twinkling&theme=dark" width="100%" />
+
+<br>
+
+<!-- КИБЕР СТАТУС-ПАНЕЛЬ -->
+```⚙️ RUNNING: Netrunner_OS_v2077.sh | LOCATION: Uzbekistan
+🌐 STATUS: Aspiring Computer Science Student | 🛡️ SKILLS: Immeasurable ```
+
+</div>
+
+---
+
+## 💾 [ SYSTEM_INFO / ОБО МНЕ ]
