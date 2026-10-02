@@ -2,10 +2,7 @@
   ╔════════════════════════════════════════════════════════════════════╗
   ║  TODO ПЕРЕД ПУБЛИКАЦИЕЙ — замени плейсхолдеры (Ctrl+F):            ║
   ║                                                                    ║
-  ║  WAKATIME_USERNAME   — твой ник на wakatime.com                    ║
   ║  DISCORD_ID          — числовой ID аккаунта Discord                ║
-  ║  CODEWARS_USERNAME   — ник на codewars.com                         ║
-  ║  LEETCODE_USERNAME   — ник на leetcode.com                         ║
   ║  YOUR_*_PLAYLIST     — ссылки на твои плейлисты                    ║
   ║  utcOffset=0         — твой сдвиг от UTC (карточка Productive Time)║
   ║                                                                    ║
@@ -131,12 +128,11 @@
       /\                 toxic@archlinux
      /  \                ---------------
     /\   \               OS:        Arch Linux x86_64
-   /      \              Kernel:    linux (rolling)
-  /   ,,   \             WM:        Hyprland (Wayland)
- /   |  |  -\            Shell:     zsh
-/_-''    ''-_\           Terminal:  kitty
-                         Editor:    Neovim · VS Code
-                         Keyboard:  split, ortholinear
+   /      \              WM:        Hyprland (Wayland)
+  /   ,,   \             Shell:     Zsh
+ /   |  |  -\            Terminal:  Kitty
+/_-''    ''-_\           Editor:    Neovim · VS Code
+                         Keyboard:  Corne Split (ZMK, Wireless)
                          Technique: Blue · Red · Purple
                          Domain:    Unlimited Void
                          Status:    the strongest
@@ -165,33 +161,28 @@
 ### ⏱️ WakaTime — Coding Activity
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=WAKATIME_USERNAME&layout=compact&langs_count=8&custom_title=WakaTime+%E2%80%94+Coding+Activity&bg_color=0a0a1a&title_color=8A2BE2&text_color=FFFFFF&icon_color=00FFFF&border_color=00FFFF" alt="WakaTime stats"/>
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ToxicStyle-DevXplorer&layout=compact&langs_count=8&custom_title=WakaTime+%E2%80%94+Coding+Activity&bg_color=0a0a1a&title_color=8A2BE2&text_color=FFFFFF&icon_color=00FFFF&border_color=00FFFF" alt="WakaTime stats" width="800"/>
 </div>
 
 ### 🌗 Когда я пишу код (Productive Time)
 
 <div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=ToxicStyle-DevXplorer&theme=radical&utcOffset=0" alt="Productive time"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=ToxicStyle-DevXplorer&theme=radical&utcOffset=0" alt="Productive time" width="800"/>
 </div>
 
-### 🥷 Codewars · LeetCode
+### ⚔️ Codewars
 
 <div align="center">
 
-<a href="https://www.codewars.com/users/CODEWARS_USERNAME">
-  <img src="https://www.codewars.com/users/CODEWARS_USERNAME/badges/large" alt="Codewars"/>
-</a>
-
-<br/>
-
-<a href="https://leetcode.com/u/LEETCODE_USERNAME/">
-  <img src="https://leetcard.jacoblin.cool/LEETCODE_USERNAME?theme=dark&font=Fira%20Code&ext=heatmap" alt="LeetCode stats"/>
+<a href="https://www.codewars.com/users/ToxicStyle-DevXplorer">
+  <img src="https://www.codewars.com/users/ToxicStyle-DevXplorer/badges/large" alt="Codewars stats — ToxicStyle-DevXplorer" width="640"/>
 </a>
 
 <br/><br/>
 
-<a href="https://www.codewars.com/users/CODEWARS_USERNAME"><img src="https://img.shields.io/badge/Codewars-profile-B1361E?style=for-the-badge&logo=codewars&logoColor=white" alt="Codewars profile"/></a>
-<a href="https://leetcode.com/u/LEETCODE_USERNAME/"><img src="https://img.shields.io/badge/LeetCode-profile-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode profile"/></a>
+<a href="https://www.codewars.com/users/ToxicStyle-DevXplorer">
+  <img src="https://img.shields.io/badge/Codewars-ToxicStyle--DevXplorer-B1361E?style=for-the-badge&logo=codewars&logoColor=white&labelColor=0a0a1a" alt="Codewars profile"/>
+</a>
 
 </div>
 
@@ -203,7 +194,7 @@
   <picture>
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ToxicStyle-DevXplorer/ToxicStyle-DevXplorer/output/github-snake.svg"/>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ToxicStyle-DevXplorer/ToxicStyle-DevXplorer/output/github-snake-neon.svg"/>
-    <img alt="Snake animation" src="https://raw.githubusercontent.com/ToxicStyle-DevXplorer/ToxicStyle-DevXplorer/output/github-snake-neon.svg"/>
+    <img alt="Snake animation" src="https://raw.githubusercontent.com/ToxicStyle-DevXplorer/ToxicStyle-DevXplorer/output/github-snake-neon.svg" width="100%"/>
   </picture>
 </div>
 
@@ -251,11 +242,12 @@
 
 | Компонент | Что используется |
 |-----------|------------------|
-| ОС | Arch Linux |
-| WM / Compositor | Hyprland (Wayland) |
-| Клавиатура | Сплит-клавиатура (впиши модель) |
-| Редакторы | Neovim, VS Code |
-| Дизайн | Figma |
+| 🐧 ОС | Arch Linux |
+| 🪟 WM | Hyprland (Wayland) |
+| ⌨️ Клавиатура | Corne Split Keyboard (ZMK Firmware, Wireless) |
+| 💻 Терминал / Shell | Kitty / Zsh |
+| 📝 Редакторы | Neovim, VS Code |
+| 🎨 Дизайн | Figma |
 
 </details>
 
@@ -264,7 +256,11 @@
 <br/>
 
 - **Jujutsu Kaisen** (呪術廻戦) — Годжо Сатору, конечно же
-- *добавь свои любимые тайтлы здесь*
+- **Chainsaw Man**
+- **Blue Lock**
+- **Re:Zero**
+- **Mushoku Tensei**
+- **Atelier of Witch Hat**
 
 </details>
 
@@ -272,7 +268,13 @@
 <summary><b>⚙️ Конфиги и dotfiles</b></summary>
 <br/>
 
-- Dotfiles (Hyprland, Neovim, shell): [github.com/ToxicStyle-DevXplorer/dotfiles](https://github.com/ToxicStyle-DevXplorer/dotfiles) *(поправь ссылку на свой репозиторий)*
+Все мои рабочие конфиги лежат здесь:
+
+[github.com/ToxicStyle-DevXplorer/dotfiles](https://github.com/ToxicStyle-DevXplorer/dotfiles)
+
+<a href="https://github.com/ToxicStyle-DevXplorer/dotfiles">
+  <img src="https://img.shields.io/badge/dotfiles-open_repo-8A2BE2?style=for-the-badge&logo=github&logoColor=white&labelColor=0a0a1a" alt="dotfiles"/>
+</a>
 
 </details>
 
@@ -282,11 +284,11 @@
 
 <div align="center">
 
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random dev quote"/>
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random dev quote" width="800"/>
 
-<br/>
+<br/><br/>
 
-<img src="https://readme-jokes.vercel.app/api?theme=radical&hideBorder" alt="Random dev joke"/>
+<img src="https://readme-jokes.vercel.app/api?theme=radical&hideBorder" alt="Random dev joke" width="800"/>
 
 <br/><br/>
 
@@ -294,4 +296,12 @@
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:8A2BE2,50:00FFFF,100:FF3366&height=120&section=footer" width="100%" alt="footer"/>
+---
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Domain_Expansion-Unlimited_Void_%E2%9C%94-8A2BE2?style=for-the-badge&labelColor=0a0a1a" alt="Domain Expansion complete"/>
+
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:8A2BE2,50:00FFFF,100:FF3366&height=140&section=footer&text=Throughout+Heaven+and+Earth%2C+I+alone+am+the+honored+one&fontSize=18&fontColor=FFFFFF&fontAlignY=72" width="100%" alt="footer"/>
