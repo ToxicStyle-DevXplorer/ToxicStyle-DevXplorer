@@ -25,7 +25,7 @@ jobs:
       - name: Update recent activity block
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          comment_tag_name: "activity"
+          comment_tag_name: "START_SECTION:activity,END_SECTION:activity"
           feed_list: "https://github.com/ToxicStyle-DevXplorer.atom"
           max_post_count: 5
           gh_token: ${{ secrets.GITHUB_TOKEN }}
