@@ -17,7 +17,7 @@
 
 <div align="center">
 
-<img src="assets/banner.png" alt="ToxicStyle-DevXplorer — Satoru Gojo banner" width="100%"/>
+<img src="assets/banner.jpg" alt="ToxicStyle-DevXplorer — Satoru Gojo banner" width="100%"/>
 
 <a href="https://github.com/ToxicStyle-DevXplorer">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3500&pause=1200&color=8A2BE2&center=true&vCenter=true&width=820&height=60&lines=Не+волнуйся.+Я+ведь+сильнейший.;На+небесах+и+на+земле+лишь+я+один+достоин.;Синий+притягивает.+Красный+отталкивает.+Фиолетовый+стирает.;Бесконечная+пустота%3A+и+бесконечный+код-ревью.;Stay+cool.+Ship+code.+Be+the+strongest." alt="Typing SVG"/>
