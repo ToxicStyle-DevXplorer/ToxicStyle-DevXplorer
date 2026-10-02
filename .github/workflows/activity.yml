@@ -27,7 +27,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          MAX_LINES: 8
+          MAX_LINES: 10
           COMMIT_MSG: "chore: update recent activity"
           COMMIT_NAME: "github-actions[bot]"
           COMMIT_EMAIL: "41898282+github-actions[bot]@users.noreply.github.com"
+          GH_USERNAME: "ToxicStyle-DevXplorer"
