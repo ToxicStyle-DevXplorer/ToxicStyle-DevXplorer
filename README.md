@@ -161,7 +161,7 @@
 ### ⏱️ WakaTime — Coding Activity
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ТВОЙ_EMAIL_ОТ_WAKATIME@gmail.com&layout=compact&langs_count=8&custom_title=Six+Eyes+%E2%80%94+Coding+Time&bg_color=0a0a1a&title_color=8A2BE2&text_color=FFFFFF&icon_color=00FFFF&border_color=00FFFF&v=12" alt="WakaTime Stats" width="800"/>
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=aleshanoname55@gmail.com&layout=compact&langs_count=8&custom_title=Six+Eyes+%E2%80%94+Coding+Time&bg_color=0a0a1a&title_color=8A2BE2&text_color=FFFFFF&icon_color=00FFFF&border_color=00FFFF&v=20" alt="WakaTime Stats" width="800"/>
 </div>
 
 ### 🌗 Когда я пишу код (Productive Time)
