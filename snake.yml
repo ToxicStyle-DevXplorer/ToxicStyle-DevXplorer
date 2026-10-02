@@ -1,0 +1,93 @@
+# =============================================================================
+# 🐍 snake.yml — Змейка, которая «съедает» твои коммиты (Platane/snk)
+# =============================================================================
+# ЧТО ДЕЛАЕТ:
+#   Берёт твою сетку активности (contribution graph) и генерирует SVG-анимацию,
+#   в которой змейка ползает по зелёным клеткам и «съедает» их.
+#   Готовые .svg-файлы кладутся в отдельную ветку `output` — так основная ветка
+#   (main) не засоряется бинарниками и автоматическими коммитами.
+#
+# КУДА ПОЛОЖИТЬ:  .github/workflows/snake.yml  (в репозитории ToxicStyle-DevXplorer/ToxicStyle-DevXplorer)
+#
+# КАК ЗАПУСТИТЬ ПЕРВЫЙ РАЗ (ОБЯЗАТЕЛЬНО!):
+#   GitHub → вкладка Actions → слева "Generate Snake Animation" → "Run workflow".
+#   Пока не нажмёшь эту кнопку, файлов в ветке `output` НЕ будет и картинка в README
+#   будет «битой».
+#
+# ГДЕ ПОТОМ ЛЕЖАТ ФАЙЛЫ:
+#   https://raw.githubusercontent.com/ToxicStyle-DevXplorer/ToxicStyle-DevXplorer/output/github-snake.svg
+#   https://raw.githubusercontent.com/ToxicStyle-DevXplorer/ToxicStyle-DevXplorer/output/github-snake-neon.svg
+# =============================================================================
+
+name: Generate Snake Animation
+
+on:
+  # 1) Автоматически — каждые 12 часов (время в UTC).
+  schedule:
+    - cron: "0 */12 * * *"
+
+  # 2) Вручную — кнопка "Run workflow" во вкладке Actions.
+  workflow_dispatch:
+
+  # 3) При каждом твоём пуше в основную ветку (удобно, пока настраиваешь).
+  push:
+    branches:
+      - main
+      - master
+
+# Права для GITHUB_TOKEN: нужно право записи, чтобы воркфлоу мог создать/обновить
+# ветку `output`. Если всё равно падает с ошибкой 403 — зайди в
+# Settings → Actions → General → Workflow permissions → выбери
+# "Read and write permissions" и нажми Save.
+permissions:
+  contents: write
+
+# Если запуски наложились друг на друга — старый отменяется, чтобы не было гонки за ветку output.
+concurrency:
+  group: snake-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    name: Generate snake SVG
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # -----------------------------------------------------------------------
+      # ШАГ 1. Генерация SVG.
+      # `svg-only` — облегчённая версия экшена: делает только SVG (без GIF),
+      # поэтому работает быстро и не требует дополнительных зависимостей.
+      # -----------------------------------------------------------------------
+      - name: Generate snake animation
+        uses: Platane/snk/svg-only@v3
+        with:
+          # Автоматически берём владельца репозитория => ToxicStyle-DevXplorer.
+          github_user_name: ${{ github.repository_owner }}
+
+          # Список файлов, которые нужно создать. Формат: путь?параметры
+          # Параметры оформления (передаются как query-string):
+          #   color_snake      — цвет змейки
+          #   color_dots       — 5 цветов клеток через запятую: от «пусто» до «максимум коммитов»
+          #   color_dot_border — цвет обводки клеток
+          #   palette          — готовая палитра (github, github-dark, github-light)
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-neon.svg?color_snake=#00FFFF&color_dots=#161033,#3b1a73,#5f1fb0,#8A2BE2,#FF3366&color_dot_border=#0a0a1a
+
+          # Файл 1: github-snake.svg       — стандартная светлая палитра (для светлой темы GitHub).
+          # Файл 2: github-snake-neon.svg  — неон Годжо: циановая змейка (#00FFFF),
+          #         клетки от тёмно-фиолетового до фиолетового (#8A2BE2) и красного (#FF3366)
+          #         на самых активных днях. Используется в README для тёмной темы.
+
+      # -----------------------------------------------------------------------
+      # ШАГ 2. Публикация файлов в ветку `output`.
+      # Экшен сам создаст ветку, если её нет, и закоммитит содержимое папки dist/.
+      # -----------------------------------------------------------------------
+      - name: Push SVGs to the output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output   # ветка, куда кладём результат
+          build_dir: dist         # какую папку публикуем
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

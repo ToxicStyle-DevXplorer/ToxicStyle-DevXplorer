@@ -1,0 +1,91 @@
+# =============================================================================
+# 🧊 profile-3d.yml — 3D / изометрический график активности за год
+#     (yoshi389111/github-profile-3d-contrib)
+# =============================================================================
+# ЧТО ДЕЛАЕТ:
+#   Раз в сутки строит 3D-версию твоей сетки коммитов и сохраняет набор SVG-файлов
+#   в папку `profile-3d-contrib/` прямо в основной ветке репозитория.
+#
+# КУДА ПОЛОЖИТЬ:  .github/workflows/profile-3d.yml
+#
+# КАК ЗАПУСТИТЬ ПЕРВЫЙ РАЗ (ОБЯЗАТЕЛЬНО!):
+#   GitHub → вкладка Actions → слева "GitHub-Profile-3D-Contrib" → "Run workflow".
+#   Пока не запустишь вручную, папки profile-3d-contrib/ не будет.
+#
+# КАКИЕ ФАЙЛЫ ПОЯВЯТСЯ в profile-3d-contrib/:
+#   profile-green-animate.svg        profile-green.svg
+#   profile-season-animate.svg       profile-season.svg
+#   profile-south-season-animate.svg profile-south-season.svg
+#   profile-night-view.svg           profile-night-green.svg
+#   profile-night-rainbow.svg  <-- используется в README (радужная палитра, ближе всего к трём цветам Годжо)
+#   profile-gitblock.svg
+#
+# ПРО ПРИВАТНЫЕ РЕПОЗИТОРИИ:
+#   Стандартный GITHUB_TOKEN видит только публичные данные. Если хочешь учитывать
+#   приватные репозитории — создай Personal Access Token (classic), добавь его в
+#   Settings → Secrets and variables → Actions → New repository secret (например, PROFILE_PAT)
+#   и замени ниже ${{ secrets.GITHUB_TOKEN }} на ${{ secrets.PROFILE_PAT }}.
+# =============================================================================
+
+name: GitHub-Profile-3D-Contrib
+
+on:
+  # Каждый день в 18:00 UTC.
+  schedule:
+    - cron: "0 18 * * *"
+
+  # Ручной запуск кнопкой "Run workflow".
+  workflow_dispatch:
+
+# Нужно право записи, чтобы воркфлоу мог закоммитить сгенерированные SVG.
+# Если упадёт с 403 — Settings → Actions → General → Workflow permissions →
+# "Read and write permissions".
+permissions:
+  contents: write
+
+# Общая группа с activity.yml: оба воркфлоу коммитят в main, и так они
+# не будут конфликтовать при одновременном запуске (выполнятся по очереди).
+concurrency:
+  group: profile-commits
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: generate-github-profile-3d-contrib
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # ШАГ 1. Скачиваем репозиторий, чтобы было куда складывать результат.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ШАГ 2. Генерация 3D-графика.
+      # Версию (0.7.1) лучше периодически сверять на странице Releases экшена.
+      - name: Generate 3D contribution graph
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Автоматически подставляется владелец репозитория => ToxicStyle-DevXplorer.
+          USERNAME: ${{ github.repository_owner }}
+          # Необязательно: MAX_REPOS: 100  (сколько репозиториев учитывать в статистике языков)
+
+      # ШАГ 3. Коммитим результат в основную ветку.
+      - name: Commit & Push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Подтягиваем свежие изменения (например, от activity.yml), чтобы push не отклонили.
+          git pull --rebase
+
+          git add -A profile-3d-contrib
+
+          # Если ничего не изменилось — спокойно выходим, без ошибки.
+          if git diff --cached --quiet; then
+            echo "Изменений нет — коммит не нужен."
+            exit 0
+          fi
+
+          git commit -m "chore: update 3D contribution graph"
+          git push

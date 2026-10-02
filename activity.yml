@@ -1,0 +1,76 @@
+# =============================================================================
+# 🔄 activity.yml — автообновление блока "Recent Activity" в README.md
+#     (jamesgeorge007/github-activity-readme)
+# =============================================================================
+# ЧТО ДЕЛАЕТ:
+#   Каждые 6 часов смотрит твои последние публичные события на GitHub
+#   (коммиты, PR, issues, звёзды, форки) и переписывает список в README.md
+#   между двумя маркерами-комментариями:
+#
+#       <!--START_SECTION:activity-->
+#       <!--END_SECTION:activity-->
+#
+#   ⚠️ Эти ДВА комментария уже есть в README.md из этого комплекта.
+#   Если удалишь или изменишь их — воркфлоу не найдёт место для вставки и ничего не обновит.
+#
+# КУДА ПОЛОЖИТЬ:  .github/workflows/activity.yml
+#
+# КАК ЗАПУСТИТЬ ПЕРВЫЙ РАЗ:
+#   GitHub → вкладка Actions → слева "Update README with recent activity" → "Run workflow".
+#   Дальше всё идёт по расписанию.
+#
+# ЗАМЕТКА:
+#   Экшен берёт только ПУБЛИЧНУЮ активность. Если за последнее время публичных
+#   событий нет — список будет пустым или не изменится.
+# =============================================================================
+
+name: Update README with recent activity
+
+on:
+  # Каждые 6 часов (UTC).
+  schedule:
+    - cron: "0 */6 * * *"
+
+  # Ручной запуск кнопкой "Run workflow".
+  workflow_dispatch:
+
+# Право записи нужно, чтобы экшен мог закоммитить изменённый README.md.
+# Если упадёт с 403 — Settings → Actions → General → Workflow permissions →
+# "Read and write permissions".
+permissions:
+  contents: write
+
+# Та же группа, что и в profile-3d.yml: коммиты в main идут по очереди, без конфликтов.
+concurrency:
+  group: profile-commits
+  cancel-in-progress: false
+
+jobs:
+  update_readme:
+    name: Update this repo's README with recent activity
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      # ШАГ 1. Скачиваем репозиторий — экшену нужен доступ к README.md.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ШАГ 2. Обновляем блок активности.
+      - name: Update recent activity block
+        uses: jamesgeorge007/github-activity-readme@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # Сколько строк последней активности показывать.
+          MAX_LINES: 8
+
+          # Сообщение коммита, который создаст экшен.
+          COMMIT_MSG: "chore: update recent activity"
+
+          # От чьего имени коммитить.
+          COMMIT_NAME: "github-actions[bot]"
+          COMMIT_EMAIL: "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Необязательно — файл, который нужно обновлять (по умолчанию README.md):
+          # TARGET_FILE: "README.md"
