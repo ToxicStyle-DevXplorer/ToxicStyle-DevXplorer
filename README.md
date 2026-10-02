@@ -253,7 +253,6 @@
 
 <details>
 <summary><b>📺 Любимое аниме и манга</b></summary>
-<br/>
 
 - **Jujutsu Kaisen** (呪術廻戦) — Годжо Сатору, конечно же
 - **Chainsaw Man**
@@ -266,7 +265,6 @@
 
 <details>
 <summary><b>⚙️ Конфиги и dotfiles</b></summary>
-<br/>
 
 Все мои рабочие конфиги лежат здесь:
 
@@ -278,30 +276,16 @@
 
 </details>
 
----
-
-## 💬 Мудрость на сегодня
-
 <div align="center">
-
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random dev quote" width="800"/>
-
-<br/><br/>
-
-<img src="https://readme-jokes.vercel.app/api?theme=radical&hideBorder" alt="Random dev joke" width="800"/>
-
-<br/><br/>
 
 *«Бесконечная пустота не страшна тому, кто умеет читать логи.»*
 
-</div>
-
 ---
-
-<div align="center">
 
 <img src="https://img.shields.io/badge/Domain_Expansion-Unlimited_Void_%E2%9C%94-8A2BE2?style=for-the-badge&labelColor=0a0a1a" alt="Domain Expansion complete"/>
 
-</div>
+<br/>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8A2BE2,50:00FFFF,100:FF3366&height=140&section=footer&text=Throughout+Heaven+and+Earth%2C+I+alone+am+the+honored+one&fontSize=18&fontColor=FFFFFF&fontAlignY=72" width="100%" alt="footer"/>
+
+</div>
